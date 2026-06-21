@@ -25,7 +25,7 @@ public class MeetingService {
     private final SummaryRepository summaryRepository;
     private final ActionItemRepository actionItemRepository;
     private final TranscriptService transcriptService;
-    private final OpenAIService openAIService;
+    private final AIService openAIService;
 
     /**
      * Self-reference via @Lazy so that the Spring proxy wraps the @Async call.
