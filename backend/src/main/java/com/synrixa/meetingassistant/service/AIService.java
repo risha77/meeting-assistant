@@ -16,13 +16,13 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class OpenAIService {
+public class AIService {
 
     private final AppProperties props;
     private final ObjectMapper mapper;
     private final RestTemplate restTemplate;
 
-    private static final String OPENAI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
+    private static final String GOOGLEAI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
     /**
      * Generate a structured meeting summary from the full transcript.
      */
@@ -108,7 +108,7 @@ public class OpenAIService {
 
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(
-                    OPENAI_URL, request, String.class);
+                    GOOGLEAI_URL, request, String.class);
 
             if (response.getStatusCode() != HttpStatus.OK || response.getBody() == null) {
                 throw new RuntimeException("OpenAI returned status: " + response.getStatusCode());
